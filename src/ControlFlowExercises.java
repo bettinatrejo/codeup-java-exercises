@@ -69,71 +69,73 @@ public class ControlFlowExercises {
 
 //        -DISPLAY A TABLE OF POWERS-
 
-//        Scanner sc = new Scanner(System.in);
-//
-//            String input = "yes";
-//        do
-//        {
-//
-//            System.out.print("Enter a number: ");
-//            int userInput = sc.nextInt();
-//
-//            String header = "Number  " + "Squared " + "Cubed   " + "\n"
-//                    +   "======  " + "======= " + "=====   ";
-//            System.out.println(header);
-//
-//            int square = 0;
-//            int cube = 0;
-//
-//            String row = "";
-//            for (int i = 1; i <= userInput; i++)
-//            {
-//
-//                square = i * i;
-//                cube = i * i * i;
-//
-//                row = i + "       " + square + "       " + cube;
-//                System.out.println(row);
-//            }
-//
-//            System.out.print("Continue? (yes/no): ");
-//            input = sc.next();
-//            System.out.println();
-//
-//        }
-//        while (!input.equalsIgnoreCase("no"));
-
-//      -Covert given number grades into letter grades-
-
-
         Scanner sc = new Scanner(System.in);
-        String input = "y";
 
-        do {
 
-            System.out.print("Enter a numerical grade: ");
+            String input = "y";
+        do
+        {
+
+            System.out.print("Enter a number: ");
             int userInput = sc.nextInt();
-            char result;
-            if (userInput >= 90)
-                { result = 'A'; }
-            else if (userInput >= 80)
-                { result = 'B'; }
-            else if (userInput >= 70)
-                { result = 'C'; }
-            else if (userInput >= 60)
-                { result = 'D'; }
-            else
-                { result = 'F'; }
 
-            System.out.println("The grade is:  " + result);
+            String header = "Number  " + "Squared " + "Cubed   " + "\n"
+                    +   "======  " + "======= " + "=====   ";
+            System.out.println(header);
+
+            int square = 0;
+            int cube = 0;
+
+            String row = "";
+            for (int i = 1; i <= userInput; i++)
+            {
+
+                square = i * i;
+                cube = i * i * i;
+
+                row = i + "        " + square + "       " + cube;
+                System.out.println(row);
+            }
 
             System.out.print("Continue? (y/n): ");
             input = sc.next();
             System.out.println();
 
-        } while (!input.equalsIgnoreCase("n"));
+        }
+        while (!input.equalsIgnoreCase("n"));
 
 
+
+
+//      -Covert given number grades into letter grades-
+
+
+//        Scanner sc = new Scanner(System.in);
+//        String input = "y";
+//
+//        do {
+//
+//            System.out.print("Enter a numerical grade: ");
+//            int userInput = sc.nextInt();
+//            char result;
+//            if (userInput >= 90)
+//                { result = 'A'; }
+//            else if (userInput >= 80)
+//                { result = 'B'; }
+//            else if (userInput >= 70)
+//                { result = 'C'; }
+//            else if (userInput >= 60)
+//                { result = 'D'; }
+//            else
+//                { result = 'F'; }
+//
+//            System.out.println("The grade is:  " + result);
+//
+//            System.out.print("Continue? (y/n): ");
+//            input = sc.next();
+//            System.out.println();
+//
+//        } while (!input.equalsIgnoreCase("n"));
 
 
 
