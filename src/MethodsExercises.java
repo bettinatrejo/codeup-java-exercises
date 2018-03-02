@@ -22,8 +22,8 @@ public class MethodsExercises {
 //        rollDice(1, 6);
     }
 
+    //  Q1
 
-        //  Q1
 //    public static void addInt(int a, int b) {
 //        System.out.println(a + b);
 //    }
@@ -46,24 +46,24 @@ public class MethodsExercises {
 
 //  Q2
 //
-//    public static int getInteger(int min, int max) {
-//
-//        Scanner sc = new Scanner(System.in);
-//
-//        System.out.print("Enter a number between 1 and 10: ");
-//        int userInput = sc.nextInt();
-//
-//        if (userInput > 0 && userInput < 11) {
-//            System.out.println("Good job!");
-//
-//        } else {
-//            return getInteger(min, max);
-//        }
-//        return userInput;
-//    }
+    public static int getInteger(int min, int max) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a number between 1 and 10: ");
+        int userInput = sc.nextInt();
+
+        if (userInput > min || userInput < max) {
+            System.out.println("Good job!");
+
+        } else {
+            return getInteger(min, max);
+        }
+        return userInput;
+    }
 
 
-//        Q3
+//   Q3
 
 //    public static long fact(long min, long max) {
 //        Scanner sc = new Scanner(System.in);
@@ -71,22 +71,22 @@ public class MethodsExercises {
 //        System.out.print("Enter a number between 1 and 10: ");
 //        int userInput = sc.nextInt();
 //
-//        String result;
+//        String result = userInput + "! = ";
+//        result += userInput;
 //        if (userInput > 0 && userInput < 11) {
-//            result = " ";
-//            result += userInput + "! = ";
-//            for (long i = userInput - 1; i >= 1; i--) {
-//                result += userInput + " x " + i;
-//                System.out.println(result);
+//
+//            for (int i = userInput - 1; i >= 1; i--) {
+//                result +=  " x " + i;
 //                userInput *= i;
 //            }
 //        } else {
-//            return fact(min, max);
+////            return fact(min, max);
+//                System.out.println(result + " = " + userInput);
 //        }
-//        System.out.println(result += " = " + userInput);
 //        return userInput;
+//
 //    }
-//}
+}
 
 //    Q4
 
@@ -97,11 +97,11 @@ public class MethodsExercises {
 //
 //        die1 = (int) (Math.random() * userInput) + 1;
 //        die2 = (int) (Math.random() * userInput) + 1;
-//        int roll = die1 + die2;
+////        int roll = die1 + die2;
 //
-//        System.out.println("The first die comes up " + die1);
-//        System.out.println("The second die comes up " + die2);
-//        System.out.println("Your total roll is " + roll);
+//        System.out.println("Die 1 is:" + die1);
+//        System.out.println("Die 2 is:" + die2);
+////        System.out.println("Your total roll is " + roll);
 //
 //
 //    return userInput;
@@ -109,4 +109,3 @@ public class MethodsExercises {
 //}
 
 
-    }
