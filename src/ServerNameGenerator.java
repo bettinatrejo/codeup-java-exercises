@@ -1,7 +1,7 @@
 
 public class ServerNameGenerator {
 
-    final static String[] adjectives = {
+    public static final String[] adjectives = {
             "Beautiful",
             "Smart",
             "Important",
@@ -15,7 +15,7 @@ public class ServerNameGenerator {
     };
 
 
-    final static String[] nouns = {
+    public static final String[] nouns = {
             "Walt Disney",
             "Gina Rodriguez",
             "San Antonio",
@@ -27,10 +27,6 @@ public class ServerNameGenerator {
             "Fruit",
             "Book"
     };
-
-//    for(String[] adjective : adjectives) {
-//        System.out.println(adjective);
-//    }
 
 
     public static String randomAdj() {
