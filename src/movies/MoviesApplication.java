@@ -1,24 +1,21 @@
 package movies;
 
+import util.Input;
 
 import java.util.*;
-import java.util.Arrays;
-
 
 
 public class MoviesApplication {
+    static Movie[] film = MoviesArray.findAll();
+    static int input;
+
+
 
     public static void main(String[] args) {
 
-
-        Scanner sc = new Scanner(System.in);
-
-
-        Movie moviesArray[] = MoviesArray.findAll();
-
-        int userInput;
-
         do {
+            Scanner sc = new Scanner(System.in);
+
             System.out.println("\nWhat would you like to do? \n" +
                     "0 - exit\n" +
                     "1 - view all movies\n" +
@@ -26,72 +23,75 @@ public class MoviesApplication {
                     "3 - view movies in the drama category\n" +
                     "4 - view movies in the horror category\n" +
                     "5 - view movies in the scifi category\n" +
-                    "6 - add a movie\n" +
+                    "6 - view movies in the comedy category\n" +
+                    "7 - view movies in the musical category\n" +
+                    "8 - add a movie\n" +
                     "\n" +
                     "Enter your choice: ");
-            userInput = sc.nextInt();
+            input = sc.nextInt();
 
-            switch (userInput) {
+            switch (input) {
                 case (0):
                     System.out.println("Good-bye.");
                     break;
                 case (1):
-                    System.out.println("Movie Title/Category: \n");
-                    for (Movie movie : moviesArray) {
-                        System.out.println(movie.getName() + "-" + movie.getCategory());
-                    }
+                    allMovies();
                     break;
                 case (2):
-                    System.out.println("Movie Title/Category: \n");
-                    for (Movie movie : moviesArray) {
-                        if (movie.getCategory().equalsIgnoreCase("animated")) {
-                            System.out.println(movie.getName() + "-" + movie.getCategory());
-                        }
-                    }
+                    grabCategory("animated");
                     break;
                 case (3):
-                    System.out.println("Movie Title/Category: \n");
-                    for (Movie movie : moviesArray) {
-                        if (movie.getCategory().equalsIgnoreCase("drama")) {
-                            System.out.println(movie.getName() + "-" + movie.getCategory());
-                        }
-                    }
+                    grabCategory("drama");
                     break;
                 case (4):
-                    System.out.println("Movie Title/Category: \n");
-                    for (Movie movie : moviesArray) {
-                        if (movie.getCategory().equalsIgnoreCase("horror")) {
-                            System.out.println(movie.getName() + "-" + movie.getCategory());
-                        }
-                    }
+                    grabCategory("horror");
                     break;
                 case (5):
-                    System.out.println("Movie Title/Category: \n");
-                    for (Movie movie : moviesArray) {
-                        if (movie.getCategory().equalsIgnoreCase("scifi")) {
-                            System.out.println(movie.getName() + "-" + movie.getCategory());
-                        }
-                    }
+                    grabCategory("scifi");
                     break;
-                case (6):
-                    Movie[] newMoviesArray = Arrays.copyOf(moviesArray, moviesArray.length +1);
-
-                    int newIndex = moviesArray.length - 1;
-                    String newValue = "Lion King";
-
-                    for (int i = moviesArray.length - 1; i > newIndex; i--) {
-                        newMoviesArray[i] = moviesArray[i];
-                    }
-//                    moviesArray[newIndex] = newValue;
-                    System.out.println("New Array: " + Arrays.toString(moviesArray));
-
+                case(6):
+                    grabCategory("comedy");
+                case(7):
+                    grabCategory("musical");
+                case (8):
+                    addMovie();
             }
 
-        }while (userInput != 0) ;
+        } while (input != 0);
 
+    }
+
+    public static void grabCategory(String genre) {
+        System.out.println("Movie Title/Category: \n");
+        for (Movie movie : film) {
+            if (movie.getCategory().equalsIgnoreCase(genre)) {
+                System.out.println(movie.getName() + "-" + movie.getCategory());
+
+            }
+        }
+    }
+
+    public static void addMovie() {
+        Input userInput = new Input();
+        String newMovie = userInput.getString("Please enter a Movie Title: ");
+        String newCategory = userInput.getString("Please enter a Category: ");
+        Movie userMovie = new Movie(newMovie, newCategory);
+        Movie[] userMovies = Arrays.copyOf(film, film.length-1);
+        int lastIndex = userMovies.length-1;
+        userMovies[lastIndex] = userMovie;
+        film = userMovies;
+    }
+
+    public static void allMovies() {
+        System.out.println("Movie Title/Category: \n");
+        for (Movie movie : film) {
+            System.out.println(movie.getName() + "-" + movie.getCategory());
         }
 
     }
+
+}
+
 
 
 
