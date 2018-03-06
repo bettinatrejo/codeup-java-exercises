@@ -15,9 +15,13 @@ public class Input {
     public String getString() {
         return scanner.next();
     }
+    public String getString(String prompt) {
+        return scanner.next();
+    }
 
 
-//    prompt being asked
+
+    //    prompt being asked
     public boolean yesNo(String prompt) {
         System.out.println(prompt);
         return yesNo();
