@@ -11,10 +11,6 @@ public class Movie {
     }
 
 
-    public Movie() {
-
-    }
-
     public String getName() {
         return name;
     }
