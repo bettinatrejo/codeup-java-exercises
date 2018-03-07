@@ -73,8 +73,10 @@ public class MoviesApplication {
 
     public static void addMovie() {
         Input userInput = new Input();
-        String newMovie = userInput.getString("Please enter a Movie Title: ");
-        String newCategory = userInput.getString("Please enter a Category: ");
+        System.out.println("Enter Title: ");
+        String newMovie = userInput.getString();
+        System.out.println("Enter Category: ");
+        String newCategory = userInput.getString();
         Movie userMovie = new Movie(newMovie, newCategory);
         Movie[] userMovies = Arrays.copyOf(film, film.length-1);
         int lastIndex = userMovies.length-1;
