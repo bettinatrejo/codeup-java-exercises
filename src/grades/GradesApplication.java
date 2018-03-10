@@ -45,9 +45,7 @@ public class GradesApplication {
         students.put("ryanstartedthefire", username4);
 
 
-
-
-
+        do {
             System.out.println(
                     "Welcome!\n" +
                             "Here are the github usernames of our students:\n"
@@ -68,11 +66,11 @@ public class GradesApplication {
                 System.out.println("GitHub Username: " + response);
             } else {
                 System.out.println("Sorry, no student found with the GitHub username of " + "\'" + response + "\'");
+
             }
+        } while(userInput.yesNo("Do you want to see another student's information? (Y or yes to agree)")); {
 
-
-
-
-
+            System.out.println("Bye, have a wonderful day!");
         }
+    }
 }
